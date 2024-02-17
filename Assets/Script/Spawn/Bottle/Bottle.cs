@@ -10,6 +10,8 @@ namespace Script.Spawn
         public TypeDrink TypeDrink;
         public GameObject Prefab;
         public float Speed;
+        public AudioClip AudioClip;
+        public AudioClip AudioCrash;
     }
 
     public enum TypeDrink

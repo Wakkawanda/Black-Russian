@@ -17,3 +17,5 @@ MonoBehaviour:
   TypeDrink: 0
   Prefab: {fileID: 2715219466556657572, guid: 5fc689a08b73a1945a8a01c3081e07ae, type: 3}
   Speed: 10
+  AudioClip: {fileID: 8300000, guid: 1cdc828521f78304c811984a2feeae7f, type: 3}
+  AudioCrash: {fileID: 0}

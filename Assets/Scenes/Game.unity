@@ -587,9 +587,7 @@ GameObject:
   - component: {fileID: 1234131324}
   - component: {fileID: 1234131323}
   m_Layer: 0
-  m_Name: "\u0421\u0430\u0443\u043D\u0434\u0442\u0440\u0435\u043A \u0434\u043B\u044F
-    DnD \u2014 \u041A\u0435\u043B\u044C\u0442\u0441\u043A\u0430\u044F \u0431\u043E\u0435\u0432\u0430\u044F
-    1 (www.lightaudio.ru)"
+  m_Name: MainSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1475,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6216710738961971228, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
+      propertyPath: mainSound
+      value: 
+      objectReference: {fileID: 1234131323}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
