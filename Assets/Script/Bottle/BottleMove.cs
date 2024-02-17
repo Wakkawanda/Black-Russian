@@ -33,5 +33,10 @@ namespace Script.Bottle
             rigidbody.velocity = Vector3.zero;
             StopCoroutine(coroutine);
         }
+
+        public void Stop()
+        {
+            StopCoroutine(coroutine);
+        }
     }
 }

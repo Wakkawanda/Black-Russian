@@ -15,4 +15,4 @@ MonoBehaviour:
   Power: 50
   TypeDrink: 1
   Prefab: {fileID: 6198815713892377132, guid: 5d503540339e372449aedd9ee0030056, type: 3}
-  Speed: 5
+  Speed: 10
