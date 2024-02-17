@@ -19,11 +19,11 @@ namespace Script.Hand
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) && !isIDrink)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPositionLeft.position, speed * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) && !isIDrink)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPositionRight.position, speed * Time.deltaTime);
             }
