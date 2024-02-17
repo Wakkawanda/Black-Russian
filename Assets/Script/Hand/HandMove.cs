@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Script.Bottle;
+using TMPro;
 using UnityEngine;
 
 namespace Script.Hand
@@ -14,8 +15,14 @@ namespace Script.Hand
         [SerializeField] private Transform targetPositionRight;
         [SerializeField] private Transform drinkPosition;
         [SerializeField] private Transform bottlePosition;
+        [SerializeField] private TextMeshProUGUI score;
 
         private bool isIDrink;
+
+        private void Start()
+        {
+            score.text = "0";
+        }
 
         private void Update()
         {

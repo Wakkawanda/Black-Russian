@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Beer
   m_EditorClassIdentifier: 
-  Power: 50
+  Power: 4
+  Score: 10
   TypeDrink: 1
   Prefab: {fileID: 6198815713892377132, guid: 5d503540339e372449aedd9ee0030056, type: 3}
   Speed: 10

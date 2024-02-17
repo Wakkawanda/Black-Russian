@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Vodka
   m_EditorClassIdentifier: 
-  Power: 120
+  Power: 24
+  Score: 50
   TypeDrink: 1
   Prefab: {fileID: 3405926078855404983, guid: 64a660f505952654bb8b8d64b9e67477, type: 3}
   Speed: 10
