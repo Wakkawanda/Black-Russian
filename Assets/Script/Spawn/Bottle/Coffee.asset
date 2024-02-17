@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Coffee
   m_EditorClassIdentifier: 
-  Power: 24
+  Power: 30
   Score: 20
   TypeDrink: 0
   Prefab: {fileID: 3350071301521988242, guid: 266b94418f0d1ee4880b0eb166d481cb, type: 3}
   Speed: 10
+  AudioClip: {fileID: 8300000, guid: 1cdc828521f78304c811984a2feeae7f, type: 3}
+  AudioCrash: {fileID: 0}

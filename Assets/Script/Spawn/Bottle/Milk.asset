@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Milk
   m_EditorClassIdentifier: 
-  Power: 6
+  Power: 30
   Score: 10
   TypeDrink: 0
   Prefab: {fileID: 3967981639419636500, guid: 867c66a89e9caa241924b31e085d5c51, type: 3}
   Speed: 10
+  AudioClip: {fileID: 8300000, guid: d3440e1a85a1c3f4cbcacab5e7bec86e, type: 3}
+  AudioCrash: {fileID: 0}

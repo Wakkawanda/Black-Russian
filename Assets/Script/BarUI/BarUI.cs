@@ -21,5 +21,10 @@ namespace Script.BarUI
                 yield return new WaitForSeconds(2);
             }
         }
+
+        public void ChangeSlider(int value)
+        {
+            slider.fillAmount += (float)value / 100;
+        }
     }
 }
