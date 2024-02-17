@@ -16,6 +16,8 @@ namespace Script.BarUI
         private float stepSpeedUp = 25;
         private float currentStepSpeedUp;
 
+        public Image Slider => slider;
+
         private void Awake()
         {
             currentGameTime = 0;

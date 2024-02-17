@@ -1490,6 +1490,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6216710738961971228, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
+      propertyPath: barUI
+      value: 
+      objectReference: {fileID: 2016447873}
+    - target: {fileID: 6216710738961971228, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
       propertyPath: mainSound
       value: 
       objectReference: {fileID: 1234131323}

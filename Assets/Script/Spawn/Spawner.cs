@@ -15,6 +15,7 @@ namespace Script.Spawn
         [SerializeField] private AudioSource mainSound;
         [SerializeField] private HandMove handMove;
         [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private BarUI.BarUI barUI;
 
         private List<BottleMove> bottles = new List<BottleMove>();
         private SpawnPoint[] spawnPoints;
@@ -112,7 +113,9 @@ namespace Script.Spawn
                 {
                     bottleMove.transform.position = spawnPoints[indexSpawnPoint].transform.position;
                     bottleMove.gameObject.SetActive(true);
-                    bottles[indexBottle].OnMove(targetSpawnPoints[indexSpawnPoint].transform.position);
+
+                    int targetPoint = barUI.Slider.fillAmount >= 0.75f ? indexTargetSpawnPoint : indexSpawnPoint;
+                    bottles[indexBottle].OnMove(targetSpawnPoints[targetPoint].transform.position);
                 }
 
                 yield return new WaitForSeconds(delaySecondsSpawn);
