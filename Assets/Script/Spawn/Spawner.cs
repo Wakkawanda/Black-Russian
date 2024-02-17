@@ -53,10 +53,10 @@ namespace Script.Spawn
                 {
                     bottleMove.transform.position = spawnPoints[indexSpawnPoint].transform.position;
                     bottleMove.gameObject.SetActive(true);
-                    StartCoroutine(bottles[indexBottle].Move(targetSpawnPoints[indexSpawnPoint].transform.position));
+                    bottles[indexBottle].OnMove(targetSpawnPoints[indexSpawnPoint].transform.position);
                 }
 
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(2);
             }
         }
 
