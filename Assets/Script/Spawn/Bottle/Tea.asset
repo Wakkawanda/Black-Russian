@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Tea
   m_EditorClassIdentifier: 
-  Power: 4
+  Power: 20
   Score: 6
   TypeDrink: 0
   Prefab: {fileID: 7656863347568524028, guid: 883d0f7593de3d34983230e84a826c3d, type: 3}

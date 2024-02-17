@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Script.Bottle;
+using Script.Spawn;
 using TMPro;
 using UnityEngine;
 
@@ -16,8 +17,11 @@ namespace Script.Hand
         [SerializeField] private Transform drinkPosition;
         [SerializeField] private Transform bottlePosition;
         [SerializeField] private TextMeshProUGUI score;
+        [SerializeField] private BarUI.BarUI barUI;
 
         private bool isIDrink;
+
+        public event Action GameOver;
 
         private void Start()
         {
@@ -62,6 +66,20 @@ namespace Script.Hand
             
             Debug.Log("Выпил");
             score.text = $"{int.Parse(score.text) + bottle.BottleConfig.Score}";
+
+            if (bottle.BottleConfig.TypeDrink == TypeDrink.Negative)
+            {
+                barUI.ChangeSlider(-bottle.BottleConfig.Power);
+            }
+            else if (bottle.BottleConfig.TypeDrink == TypeDrink.Positive)
+            {
+                barUI.ChangeSlider(bottle.BottleConfig.Power);
+            }
+            else if (bottle.BottleConfig.TypeDrink == TypeDrink.DeadDrink)
+            {
+                GameOver?.Invoke();
+                Debug.Log("Смерть");
+            }
 
             bottle.gameObject.SetActive(false);
             bottle.transform.eulerAngles = startRotation;
