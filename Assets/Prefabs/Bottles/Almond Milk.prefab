@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleConfig: {fileID: 11400000, guid: 5276828be2e0df54dbfed8ee26ba09d3, type: 2}
+  material: {fileID: -3846018093981099296, guid: 663db096267c0e144a8108fb5eb0dca0, type: 3}
+  playtime: 1

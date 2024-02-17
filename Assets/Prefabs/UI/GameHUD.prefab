@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2072544317906169771}
+  handMove: {fileID: 0}
 --- !u!1 &2709960608201799154
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.5
+  m_FillAmount: 0.2
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -389,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2072544317906169771}
+  handMove: {fileID: 0}
 --- !u!1 &8592259576034494597
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +403,7 @@ GameObject:
   - component: {fileID: 3761320791294995319}
   - component: {fileID: 2672723338105764875}
   - component: {fileID: 4434887626041950297}
+  - component: {fileID: 2877988343081017934}
   m_Layer: 5
   m_Name: GameHUD
   m_TagString: Untagged
@@ -492,3 +495,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &2877988343081017934
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592259576034494597}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

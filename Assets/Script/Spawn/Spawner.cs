@@ -14,6 +14,8 @@ namespace Script.Spawn
         [SerializeField] private List<Bottle> bottleConfigs;
         [SerializeField] private AudioSource mainSound;
         [SerializeField] private HandMove handMove;
+        [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private BarUI.BarUI barUI;
 
         private List<BottleMove> bottles = new List<BottleMove>();
         private SpawnPoint[] spawnPoints;
@@ -25,6 +27,8 @@ namespace Script.Spawn
 
         private void Awake()
         {
+            canvasGroup.alpha = 0;
+            
             foreach (Bottle bottleConfig in bottleConfigs)
             {
                 BottleMove bottleMove1 = Instantiate(bottleConfig.Prefab).GetComponent<BottleMove>();
@@ -57,7 +61,7 @@ namespace Script.Spawn
             if (currentGameTime > currentStepSpeedUp)
             {
                 currentStepSpeedUp += stepSpeedUp;
-                if (delaySecondsSpawn > 0.5f)
+                if (delaySecondsSpawn > 0.6f)
                     delaySecondsSpawn -= 0.5f;
             }
         }
@@ -72,7 +76,7 @@ namespace Script.Spawn
             {
                 if (TryGetBottle(out BottleMove bottleMove, 0))
                 {
-                    bottleMove.BottleConfig.Speed = 1.2f;
+                    bottleMove.playtime = -7f;
                     bottleMove.transform.position = spawnPoints[2].transform.position;
                     bottleMove.gameObject.SetActive(true);
                     bottles[0].OnMove(targetSpawnPoints[2].transform.position);
@@ -85,13 +89,19 @@ namespace Script.Spawn
 
             while (mainSound.volume > 0.3f)
             {
-                mainSound.volume -= 0.03f;
-                yield return new WaitForSeconds(0.65f);
+                mainSound.volume -= 0.0211f;
+                yield return new WaitForSeconds(1f);
             }
+
+            firstBottle.playtime = 2;
 
             yield return new WaitUntil(() => handMove.isIFirstDrink);
             
-            firstBottle.BottleConfig.Speed = 10f;
+            while (canvasGroup.alpha < 1)
+            {
+                canvasGroup.alpha += 0.01f;
+                yield return null;
+            }
             
             while (true)
             {
@@ -103,7 +113,9 @@ namespace Script.Spawn
                 {
                     bottleMove.transform.position = spawnPoints[indexSpawnPoint].transform.position;
                     bottleMove.gameObject.SetActive(true);
-                    bottles[indexBottle].OnMove(targetSpawnPoints[indexSpawnPoint].transform.position);
+
+                    int targetPoint = barUI.Slider.fillAmount >= 0.75f ? indexTargetSpawnPoint : indexSpawnPoint;
+                    bottles[indexBottle].OnMove(targetSpawnPoints[targetPoint].transform.position);
                 }
 
                 yield return new WaitForSeconds(delaySecondsSpawn);

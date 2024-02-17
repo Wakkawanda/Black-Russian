@@ -768,6 +768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleConfig: {fileID: 11400000, guid: f030eeb91ef9ec34bbd60d362a6a13a7, type: 2}
+  material: {fileID: 2100000, guid: 74d042000bcfa974ba24fb8e2a6e8d3a, type: 2}
+  playtime: 1
 --- !u!1 &8376905479659301668
 GameObject:
   m_ObjectHideFlags: 0
