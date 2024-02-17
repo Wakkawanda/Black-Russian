@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +8,18 @@ namespace Script.BarUI
     {
         [SerializeField] private Image slider;
 
-        private void Update()
+        private void Start()
         {
+            StartCoroutine(RunningSobriety());
+        }
+
+        private IEnumerator RunningSobriety()
+        {
+            while (true)
+            {
+                slider.fillAmount -= 0.01f;
+                yield return new WaitForSeconds(2);
+            }
         }
     }
 }
