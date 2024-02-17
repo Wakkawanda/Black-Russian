@@ -9,6 +9,7 @@ namespace Script.Bottle
         
         private Rigidbody rigidbody;
         private Coroutine coroutine;
+        private float playtime = 1;
 
         public Spawn.Bottle BottleConfig => bottleConfig;
 
@@ -28,10 +29,11 @@ namespace Script.Bottle
             {
                 transform.position = Vector3.MoveTowards(transform.position,
                     new Vector3(targetPosition.x, transform.position.y, targetPosition.z),
-                    bottleConfig.Speed * Time.deltaTime);
+                    bottleConfig.Speed * Time.deltaTime * playtime);
                 yield return null;
             }
 
+            playtime += 0.5f;
             rigidbody.velocity = Vector3.zero;
             StopCoroutine(coroutine);
         }

@@ -20,7 +20,6 @@ namespace Script.Hand
         [SerializeField] private BarUI.BarUI barUI;
         [SerializeField] private AudioSource audioSource;
 
-        
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
 
@@ -70,9 +69,6 @@ namespace Script.Hand
             Debug.Log("Выпил");
             score.text = $"{int.Parse(score.text) + bottle.BottleConfig.Score}";
             audioSource.PlayOneShot(bottle.BottleConfig.AudioClip);
-
-            yield return new WaitForSeconds(0.2f);
-                
             isIFirstDrink = true;
 
             if (bottle.BottleConfig.TypeDrink == TypeDrink.Negative)
