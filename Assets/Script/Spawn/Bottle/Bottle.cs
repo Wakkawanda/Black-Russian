@@ -7,6 +7,7 @@ namespace Script.Spawn
     {
         public int Power;
         public TypeDrink TypeDrink;
+        public GameObject Prefab;
     }
 
     public enum TypeDrink
