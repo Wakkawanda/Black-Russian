@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3474349682331018918}
   - component: {fileID: 1827803622819835821}
   - component: {fileID: 8291598020437841258}
+  - component: {fileID: 4544376448768797649}
   m_Layer: 0
   m_Name: Posion
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.49991274, y: 0.50008726, z: 0.49991274, w: 0.50008726}
   m_LocalPosition: {x: 0, y: 3.73, z: -0}
-  m_LocalScale: {x: 30.000002, y: 30.000002, z: 30.000002}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,3 +126,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &4544376448768797649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483704414299439641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010721728, y: 0.01003945, z: 0.01705216}
+  m_Center: {x: -0.000529713, y: 0.000009318085, z: 0.001003803}
