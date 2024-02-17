@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
-  m_Name: Liquor
+  m_Name: Tea
   m_EditorClassIdentifier: 
-  Power: 100
-  TypeDrink: 1
+  Power: 120
+  TypeDrink: 0
+  Prefab: {fileID: 7656863347568524028, guid: 883d0f7593de3d34983230e84a826c3d, type: 3}
+  Speed: 10

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
-  m_Name: Cocktail
+  m_Name: Cola
   m_EditorClassIdentifier: 
-  Power: 70
-  TypeDrink: 1
-  Prefab: {fileID: 0}
-  Speed: 0
+  Power: 120
+  TypeDrink: 0
+  Prefab: {fileID: 6673637484195131423, guid: 79ba998511bcbc340bc3b49ab3a911fd, type: 3}
+  Speed: 10
