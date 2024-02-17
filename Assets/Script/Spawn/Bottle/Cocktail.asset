@@ -15,4 +15,4 @@ MonoBehaviour:
   Power: 70
   TypeDrink: 1
   Prefab: {fileID: 0}
-  Speed: 0
+  Speed: 10

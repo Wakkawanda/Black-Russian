@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
-  m_Name: Yager
+  m_Name: Coffee
   m_EditorClassIdentifier: 
-  Power: 200
-  TypeDrink: 1
-  Prefab: {fileID: 0}
+  Power: 120
+  TypeDrink: 0
+  Prefab: {fileID: 3350071301521988242, guid: 266b94418f0d1ee4880b0eb166d481cb, type: 3}
   Speed: 10

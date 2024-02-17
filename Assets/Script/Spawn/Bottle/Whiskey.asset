@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Power: 150
   TypeDrink: 1
+  Prefab: {fileID: 0}
+  Speed: 10
