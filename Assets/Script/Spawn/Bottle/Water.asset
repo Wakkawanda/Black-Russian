@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  Power: 120
+  Power: 12
+  Score: 14
   TypeDrink: 0
   Prefab: {fileID: 2715219466556657572, guid: 5fc689a08b73a1945a8a01c3081e07ae, type: 3}
   Speed: 10
