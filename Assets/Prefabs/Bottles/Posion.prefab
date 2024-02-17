@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleConfig: {fileID: 11400000, guid: 6878015f0bc4f8a47904542d4da027f6, type: 2}
+  material: {fileID: 8554655104631171556, guid: cad45d630ebfa414683e3cfcd23f7b91, type: 3}
+  playtime: 1
 --- !u!54 &8291598020437841258
 Rigidbody:
   m_ObjectHideFlags: 0

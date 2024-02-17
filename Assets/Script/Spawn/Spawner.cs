@@ -57,7 +57,7 @@ namespace Script.Spawn
             if (currentGameTime > currentStepSpeedUp)
             {
                 currentStepSpeedUp += stepSpeedUp;
-                if (delaySecondsSpawn > 0.5f)
+                if (delaySecondsSpawn > 0.6f)
                     delaySecondsSpawn -= 0.5f;
             }
         }
@@ -72,7 +72,7 @@ namespace Script.Spawn
             {
                 if (TryGetBottle(out BottleMove bottleMove, 0))
                 {
-                    bottleMove.BottleConfig.Speed = 1.2f;
+                    bottleMove.playtime = -7f;
                     bottleMove.transform.position = spawnPoints[2].transform.position;
                     bottleMove.gameObject.SetActive(true);
                     bottles[0].OnMove(targetSpawnPoints[2].transform.position);
@@ -85,13 +85,13 @@ namespace Script.Spawn
 
             while (mainSound.volume > 0.3f)
             {
-                mainSound.volume -= 0.03f;
-                yield return new WaitForSeconds(0.65f);
+                mainSound.volume -= 0.0211f;
+                yield return new WaitForSeconds(1f);
             }
 
+            firstBottle.playtime = 2;
+
             yield return new WaitUntil(() => handMove.isIFirstDrink);
-            
-            firstBottle.BottleConfig.Speed = 10f;
             
             while (true)
             {

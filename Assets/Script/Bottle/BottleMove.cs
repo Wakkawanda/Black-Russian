@@ -6,16 +6,22 @@ namespace Script.Bottle
     public class BottleMove : MonoBehaviour
     {
         [SerializeField] private Spawn.Bottle bottleConfig;
-        
+        [SerializeField] private Material material;
+
         private Rigidbody rigidbody;
         private Coroutine coroutine;
-        private float playtime = 1;
+        public float playtime = 1;
 
         public Spawn.Bottle BottleConfig => bottleConfig;
 
         private void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
+        }
+
+        private void OnRenderImage (RenderTexture source, RenderTexture destination) 
+        {
+            Graphics.Blit (source, destination, material);
         }
 
         public void OnMove(Vector3 targetPosition)
@@ -25,15 +31,16 @@ namespace Script.Bottle
 
         private IEnumerator Move(Vector3 targetPosition)
         {
+            playtime += 2f;
+
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position,
                     new Vector3(targetPosition.x, transform.position.y, targetPosition.z),
-                    bottleConfig.Speed * Time.deltaTime * playtime);
+                    (bottleConfig.Speed + playtime) * Time.deltaTime);
                 yield return null;
             }
 
-            playtime += 0.5f;
             rigidbody.velocity = Vector3.zero;
             StopCoroutine(coroutine);
         }

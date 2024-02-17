@@ -565,7 +565,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &924661780 stripped
+--- !u!114 &1054705960 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1842185068749623902, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
   m_PrefabInstance: {fileID: 5636998329252375569}
@@ -607,7 +607,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1432,7 +1432,7 @@ PrefabInstance:
     - target: {fileID: 1180511472149273631, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
       propertyPath: score
       value: 
-      objectReference: {fileID: 924661780}
+      objectReference: {fileID: 1054705960}
     - target: {fileID: 5074516829745171598, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
