@@ -10,6 +10,8 @@ namespace Script.Bottle
         private Rigidbody rigidbody;
         private Coroutine coroutine;
 
+        public Spawn.Bottle BottleConfig => bottleConfig;
+
         private void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();

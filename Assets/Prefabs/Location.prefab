@@ -9502,20 +9502,28 @@ PrefabInstance:
       value: TableSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
+      propertyPath: m_Size.x
+      value: 0.14454412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
       propertyPath: m_Size.y
       value: 0.10461822
       objectReference: {fileID: 0}
     - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
       propertyPath: m_Size.z
-      value: 0.20134751
+      value: 0.20134757
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
+      propertyPath: m_Center.x
+      value: 0.07120238
       objectReference: {fileID: 0}
     - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
       propertyPath: m_Center.y
-      value: 1.0093703
+      value: 1.0093728
       objectReference: {fileID: 0}
     - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
       propertyPath: m_Center.z
-      value: 0.20253879
+      value: 0.20253897
       objectReference: {fileID: 0}
     - target: {fileID: 5125015256060685174, guid: 1da5e8effe18ab8478f6ba8836972fff, type: 3}
       propertyPath: m_IsTrigger

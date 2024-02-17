@@ -42,11 +42,11 @@ namespace Script.Hand
             {
                 isIDrink = true;
                 bottleMove.Stop();
-                StartCoroutine(Drink(other));
+                StartCoroutine(Drink(bottleMove));
             }
         }
 
-        private IEnumerator Drink(Collider bottle)
+        private IEnumerator Drink(BottleMove bottle)
         {
             Vector3 startPosition = transform.position;
             Vector3 startRotation = bottle.transform.rotation.eulerAngles;
@@ -61,6 +61,7 @@ namespace Script.Hand
             }
             
             Debug.Log("Выпил");
+            score.text = $"{int.Parse(score.text) + bottle.BottleConfig.Score}";
 
             bottle.gameObject.SetActive(false);
             bottle.transform.eulerAngles = startRotation;
