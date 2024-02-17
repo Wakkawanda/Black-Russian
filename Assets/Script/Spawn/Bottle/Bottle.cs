@@ -8,6 +8,7 @@ namespace Script.Spawn
         public int Power;
         public TypeDrink TypeDrink;
         public GameObject Prefab;
+        public float Speed;
     }
 
     public enum TypeDrink
