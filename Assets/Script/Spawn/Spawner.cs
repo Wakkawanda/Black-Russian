@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,10 @@ namespace Script.Spawn
         private List<BottleMove> bottles = new List<BottleMove>();
         private SpawnPoint[] spawnPoints;
         private TargetSpawnPoint[] targetSpawnPoints;
+        private float delaySecondsSpawn = 2;
+        private float currentGameTime = 0;
+        private float stepSpeedUp = 25;
+        private float currentStepSpeedUp;
 
         private void Awake()
         {
@@ -36,6 +41,8 @@ namespace Script.Spawn
 
             spawnPoints = GetComponentsInChildren<SpawnPoint>();
             targetSpawnPoints = GetComponentsInChildren<TargetSpawnPoint>();
+            
+            currentStepSpeedUp = stepSpeedUp;
         }
 
         private void Start()
@@ -43,8 +50,21 @@ namespace Script.Spawn
             StartCoroutine(StartSpawn());
         }
 
+        private void Update()
+        {
+            currentGameTime += Time.deltaTime;
+
+            if (currentGameTime > currentStepSpeedUp)
+            {
+                currentStepSpeedUp += stepSpeedUp;
+                if (delaySecondsSpawn > 0.5f)
+                    delaySecondsSpawn -= 0.5f;
+            }
+        }
+
         private IEnumerator StartSpawn()
         {
+            currentGameTime = 0;
             bool isFirst = false;
             BottleMove firstBottle = null;
             
@@ -86,7 +106,7 @@ namespace Script.Spawn
                     bottles[indexBottle].OnMove(targetSpawnPoints[indexSpawnPoint].transform.position);
                 }
 
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(delaySecondsSpawn);
             }
         }
 
