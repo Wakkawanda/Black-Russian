@@ -497,6 +497,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+--- !u!114 &628027943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1180511472149273631, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
+  m_PrefabInstance: {fileID: 767060429710876872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a8b9d08e0f4a9abd95e2187967e32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &891263230
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &1211484687 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2877988343081017934, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
+  m_PrefabInstance: {fileID: 5636998329252375569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234131322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1493,10 @@ PrefabInstance:
       propertyPath: mainSound
       value: 
       objectReference: {fileID: 1234131323}
+    - target: {fileID: 6216710738961971228, guid: 844e4f0518b344c49b28e8b329330463, type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 1211484687}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1570,6 +1590,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744981776636619745, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
+      propertyPath: handMove
+      value: 
+      objectReference: {fileID: 628027943}
+    - target: {fileID: 6956982824382549517, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
+      propertyPath: handMove
+      value: 
+      objectReference: {fileID: 628027943}
     - target: {fileID: 8592259576034494597, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
       propertyPath: m_Name
       value: GameHUD

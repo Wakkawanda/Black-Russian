@@ -14,6 +14,7 @@ namespace Script.Spawn
         [SerializeField] private List<Bottle> bottleConfigs;
         [SerializeField] private AudioSource mainSound;
         [SerializeField] private HandMove handMove;
+        [SerializeField] private CanvasGroup canvasGroup;
 
         private List<BottleMove> bottles = new List<BottleMove>();
         private SpawnPoint[] spawnPoints;
@@ -25,6 +26,8 @@ namespace Script.Spawn
 
         private void Awake()
         {
+            canvasGroup.alpha = 0;
+            
             foreach (Bottle bottleConfig in bottleConfigs)
             {
                 BottleMove bottleMove1 = Instantiate(bottleConfig.Prefab).GetComponent<BottleMove>();
@@ -92,6 +95,12 @@ namespace Script.Spawn
             firstBottle.playtime = 2;
 
             yield return new WaitUntil(() => handMove.isIFirstDrink);
+            
+            while (canvasGroup.alpha < 1)
+            {
+                canvasGroup.alpha += 0.01f;
+                yield return null;
+            }
             
             while (true)
             {
