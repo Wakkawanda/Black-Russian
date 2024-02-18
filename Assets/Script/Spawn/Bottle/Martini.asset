@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Martini
   m_EditorClassIdentifier: 
-  Power: 30
+  Power: 10
   Score: 16
   TypeDrink: 1
   Prefab: {fileID: 4401638343695572671, guid: 0fa87e0e6d715e046b8c9961f4a16f0a, type: 3}

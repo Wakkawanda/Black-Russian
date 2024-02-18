@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
   m_Name: Juice
   m_EditorClassIdentifier: 
-  Power: 20
-  Score: 8
+  Power: 10
+  Score: 10
   TypeDrink: 0
   Prefab: {fileID: 7160498851885757370, guid: 7c40ae84de4372243bc6726851643d33, type: 3}
   Speed: 6
