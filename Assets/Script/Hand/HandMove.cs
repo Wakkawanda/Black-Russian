@@ -22,6 +22,8 @@ namespace Script.Hand
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private GameObject end3;
 
+        private const string RewardKey3 = "RewardKey3";
+
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
 
@@ -70,7 +72,6 @@ namespace Script.Hand
                 yield return null;
             }
             
-            Debug.Log("Выпил");
             score.text = $"{int.Parse(score.text) + bottle.BottleConfig.Score}";
             audioSource.PlayOneShot(bottle.BottleConfig.AudioClip);
             isIFirstDrink = true;
@@ -85,6 +86,7 @@ namespace Script.Hand
             }
             else if (bottle.BottleConfig.TypeDrink == TypeDrink.DeadDrink)
             {
+                PlayerPrefs.SetInt(RewardKey3, 1);
                 end3.gameObject.SetActive(true);
                 StartCoroutine(barUI.GameOver());
             }
@@ -100,7 +102,6 @@ namespace Script.Hand
                 yield return null;
             }
             
-            Debug.Log("Вернулся");
             isIDrink = false;
         }
 

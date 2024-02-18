@@ -23,6 +23,10 @@ namespace Script.BarUI
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioSource gameOver;
         [SerializeField] private Spawner spawner;
+        
+        private const string RewardKey1 = "RewardKey1";
+        private const string RewardKey2 = "RewardKey2";
+        private const string RewardKey4 = "RewardKey4";
 
         private Vignette vignette;
         private LensDistortion lensDistortion;
@@ -62,7 +66,7 @@ namespace Script.BarUI
             {
                 slider.fillAmount -= 0.01f;
                 
-                if (slider.fillAmount > 0.70f)
+                if (slider.fillAmount > 0.75f)
                 {
                     float targetValue = lensDistortion.intensity.value - 50f;
                     
@@ -73,7 +77,7 @@ namespace Script.BarUI
                     }
                 }
                 
-                if (slider.fillAmount < 0.70f)
+                if (slider.fillAmount < 0.75f)
                 {
                     while (lensDistortion.intensity.value is < 0 and < 100)
                     {
@@ -87,7 +91,7 @@ namespace Script.BarUI
                     }
                 }
 
-                if (slider.fillAmount < 0.30f)
+                if (slider.fillAmount < 0.25f)
                 {
                     float targetValue = vignette.intensity.value + 0.05f;
                     
@@ -98,7 +102,7 @@ namespace Script.BarUI
                     }
                 }
                 
-                if (slider.fillAmount > 0.30f)
+                if (slider.fillAmount > 0.25f)
                 {
                     vignette.intensity.value = 0f;
                 }
@@ -112,7 +116,7 @@ namespace Script.BarUI
                     particleSystemUp.gameObject.SetActive(false);
                 }
 
-                if (slider.fillAmount < 0.3f)
+                if (slider.fillAmount < 0.25f)
                 {
                     particleSystemDown.gameObject.SetActive(true);
                 }
@@ -124,28 +128,30 @@ namespace Script.BarUI
                 if (currentGameTime > currentStepSpeedUp)
                 {
                     currentStepSpeedUp += stepSpeedUp;
-                    if (delaySecondsSpawn >= 0.3)
-                        delaySecondsSpawn -= 0.29f;
+                    if (delaySecondsSpawn > 0.3)
+                        delaySecondsSpawn -= 0.3f;
                 }
 
                 if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) < 1000)
                 {
+                    PlayerPrefs.SetInt(RewardKey1, 1);
                     end1.gameObject.SetActive(true);
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) < 1000)
+                if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) < 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
                 
                 if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) >= 1000)
                 {
+                    PlayerPrefs.SetInt(RewardKey4, 1);
                     end3.gameObject.SetActive(true);
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) >= 1000)
+                if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) >= 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
@@ -158,13 +164,15 @@ namespace Script.BarUI
         {
             yield return new WaitForSeconds(5);
 
-            if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) < 1000)
+            if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) < 1000)
             {
+                PlayerPrefs.SetInt(RewardKey2, 1);
                 end2.gameObject.SetActive(true);
             }
 
-            if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) >= 1000)
+            if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) >= 1000)
             {
+                PlayerPrefs.SetInt(RewardKey4, 1);
                 end3.gameObject.SetActive(true);
             }
             
