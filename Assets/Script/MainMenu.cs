@@ -20,6 +20,12 @@ public class MainMenu : MonoBehaviour
         {
             text1.text = PlayerPrefs.GetString("keyScore", "0");
             text2.text = PlayerPrefs.GetString("keyScore", "0");
+
+            if (!int.TryParse(text1.text, out int value))
+            {
+                text1.text = "0";
+                text2.text = "0";
+            }
         }
         
     }
