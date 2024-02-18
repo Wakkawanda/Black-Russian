@@ -168,15 +168,15 @@ namespace Script.BarUI
             {
                 PlayerPrefs.SetInt(RewardKey2, 1);
                 end2.gameObject.SetActive(true);
+                StartCoroutine(GameOver());
             }
 
             if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) >= 1000)
             {
                 PlayerPrefs.SetInt(RewardKey4, 1);
                 end3.gameObject.SetActive(true);
+                StartCoroutine(GameOver());
             }
-            
-            StartCoroutine(GameOver());
         }
 
         public IEnumerator GameOver()
