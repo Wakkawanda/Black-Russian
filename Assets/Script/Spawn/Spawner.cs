@@ -70,7 +70,12 @@ namespace Script.Spawn
         public void StopSpawn()
         {
             StopCoroutine(coroutine);
-            PlayerPrefs.SetString("keyScore", handMove.Score.text);
+            handMove.GameOverScore.text = $"{handMove.Score.text}";
+
+            if (int.Parse(PlayerPrefs.GetString("keyScore")) < int.Parse(handMove.Score.text))
+            {
+                PlayerPrefs.SetString("keyScore", $"{handMove.Score}");
+            }
         }
 
         private IEnumerator StartSpawn()

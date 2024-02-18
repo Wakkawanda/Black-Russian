@@ -19,6 +19,7 @@ namespace Script.BarUI
         [SerializeField] private GameObject end1;
         [SerializeField] private GameObject end2;
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioSource breakGameOver;
         [SerializeField] private Spawner spawner;
 
         private Vignette vignette;
@@ -122,18 +123,29 @@ namespace Script.BarUI
                         delaySecondsSpawn -= 0.3f;
                 }
 
-                if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) >= 1000)
-                {
-                    end2.gameObject.SetActive(true);
-                    StartCoroutine(GameOver());
-                }
-                else if (vignette.intensity.value >= 0.8f)
+                if (vignette.intensity.value >= 0.8f)
                 {
                     end1.gameObject.SetActive(true);
                     StartCoroutine(GameOver());
                 }
+                
+                if (lensDistortion.intensity.value < -90f)
+                {
+                    StartCoroutine(StartGameOver());
+                }
 
                 yield return new WaitForSeconds(delaySecondsSpawn);
+            }
+        }
+
+        private IEnumerator StartGameOver()
+        {
+            yield return new WaitForSeconds(5);
+
+            if (lensDistortion.intensity.value < -90f)
+            {
+                end2.gameObject.SetActive(true);
+                StartCoroutine(GameOver());
             }
         }
 

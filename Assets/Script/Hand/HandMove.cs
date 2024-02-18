@@ -17,16 +17,17 @@ namespace Script.Hand
         [SerializeField] private Transform drinkPosition;
         [SerializeField] private Transform bottlePosition;
         [SerializeField] private TextMeshProUGUI score;
+        [SerializeField] private TextMeshProUGUI gameOverScore;
         [SerializeField] private BarUI.BarUI barUI;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private GameObject end3;
 
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
-        
 
         public Transform BottlePosition => bottlePosition;
         public TextMeshProUGUI Score => score;
+        public TextMeshProUGUI GameOverScore => gameOverScore;
 
         private void Start()
         {
