@@ -84,7 +84,7 @@ namespace Script.BarUI
             if (currentGameTime > currentStepSpeedUp && handMove.isIFirstDrink)
             {
                 currentStepSpeedUp += stepSpeedUp;
-                if (delaySecondsSpawn > 0.6)
+                if (delaySecondsSpawn > 0.3)
                     delaySecondsSpawn -= 0.3f;
             }
         }
