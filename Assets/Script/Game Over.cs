@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
 
     private void OnEnable()
     {
-        menu.onClick.AddListener(() => SceneManager.LoadScene("Game"));
+        menu.onClick.AddListener(() => SceneManager.LoadScene("Menu"));
         restart.onClick.AddListener(() => SceneManager.LoadScene("Game"));
     }
 }
