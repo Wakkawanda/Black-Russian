@@ -16,6 +16,7 @@ namespace Script.BarUI
         [SerializeField] private ParticleSystem particleSystemDown;
         [SerializeField] private PostProcessVolume postProcessVolume;
         [SerializeField] private CanvasGroup mainCanvasGroup;
+        [SerializeField] private CanvasGroup barCanvasGroup;
         [SerializeField] private GameObject end1;
         [SerializeField] private GameObject end2;
         [SerializeField] private AudioSource audioSource;
@@ -154,6 +155,7 @@ namespace Script.BarUI
 
         public IEnumerator GameOver()
         {
+            barCanvasGroup.alpha = 0;
             spawner.StopSpawn();
             StopCoroutine(coroutine);
             
