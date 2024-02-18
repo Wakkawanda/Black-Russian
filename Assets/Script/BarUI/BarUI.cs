@@ -32,6 +32,7 @@ namespace Script.BarUI
         private LensDistortion lensDistortion;
         private Coroutine coroutine;
         private Coroutine coroutineAddScore;
+        private Coroutine coroutineAddFill;
         private float delaySecondsSpawn = 1.5f;
         private float currentGameTime = 0;
         private float stepSpeedUp = 25;
@@ -53,16 +54,27 @@ namespace Script.BarUI
         {
             coroutine = StartCoroutine(RunningSobriety());
             coroutineAddScore = StartCoroutine(AddScore());
+            coroutineAddFill = StartCoroutine(AddFill());
         }
 
         private IEnumerator AddScore()
         {
             while (true)
             {
-                if (slider.fillAmount > 0.25 && slider.fillAmount < 75)
+                if (slider.fillAmount > 0.25f && slider.fillAmount < 0.75f)
                     handMove.Score.text = $"{int.Parse(handMove.Score.text) + 1}";
 
                 yield return new WaitForSeconds(0.1f);
+            }
+        }
+
+        private IEnumerator AddFill()
+        {
+            while (true)
+            {
+                slider.fillAmount -= 0.01f;
+
+                yield return new WaitForSeconds(delaySecondsSpawn);
             }
         }
 
@@ -84,7 +96,7 @@ namespace Script.BarUI
             if (currentGameTime > currentStepSpeedUp && handMove.isIFirstDrink)
             {
                 currentStepSpeedUp += stepSpeedUp;
-                if (delaySecondsSpawn > 0.3)
+                if (delaySecondsSpawn > 0.5)
                     delaySecondsSpawn -= 0.3f;
             }
         }
@@ -95,8 +107,6 @@ namespace Script.BarUI
             
             while (true)
             {
-                slider.fillAmount -= 0.01f;
-                
                 if (slider.fillAmount > 0.75f)
                 {
                     float targetValue = lensDistortion.intensity.value - 50f;
@@ -131,16 +141,18 @@ namespace Script.BarUI
                         vignette.intensity.value += 0.01f;
                         yield return null;
                     }
+
+                    yield return new WaitForSeconds(1);
                 }
 
-                if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) < 1000)
+                if (vignette.intensity.value >= 1f && int.Parse(handMove.Score.text) < 1000)
                 {
                     PlayerPrefs.SetInt(RewardKey1, 1);
                     end1.gameObject.SetActive(true);
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) < 1000)
+                if (lensDistortion.intensity.value <= -100f && int.Parse(handMove.Score.text) < 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
@@ -157,7 +169,7 @@ namespace Script.BarUI
                     StartCoroutine(StartGameOver());
                 }
 
-                yield return new WaitForSeconds(delaySecondsSpawn);
+                yield return null;
             }
         }
 
@@ -187,6 +199,7 @@ namespace Script.BarUI
             spawner.StopSpawn();
             StopCoroutine(coroutine);
             StopCoroutine(coroutineAddScore);
+            StopCoroutine(coroutineAddFill);
             
             while (mainCanvasGroup.alpha < 1)
             {
