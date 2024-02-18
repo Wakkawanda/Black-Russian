@@ -24,20 +24,64 @@ namespace Script.Bottle
             Graphics.Blit (source, destination, material);
         }
 
-        public void OnMove(Vector3 targetPosition)
+        public void OnMove(Vector3 targetPosition1, Vector3 targetPosition2, Vector3 targetPosition3)
         {
-            coroutine = StartCoroutine(Move(targetPosition));
+            coroutine = StartCoroutine(Move(targetPosition1, targetPosition2, targetPosition3));
         }
 
-        private IEnumerator Move(Vector3 targetPosition)
+        private IEnumerator Move(Vector3 targetPosition1, Vector3 targetPosition2, Vector3 targetPosition3)
         {
             playtime += 2f;
 
-            while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+            bool isStage1 = false;
+            bool isStage2 = true;
+            bool isStage3 = true;
+
+            while (Vector3.Distance(transform.position, targetPosition3) > 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position,
-                    new Vector3(targetPosition.x, transform.position.y, targetPosition.z),
-                    (bottleConfig.Speed + playtime) * Time.deltaTime);
+                if (Vector3.Distance(transform.position, targetPosition1) < 2f)
+                {
+                    isStage1 = true;
+                    isStage2 = false;
+                    isStage3 = true;
+                }
+                if (Vector3.Distance(transform.position, targetPosition2) < 2f)
+                {
+                    isStage1 = true;
+                    isStage2 = true;
+                    isStage3 = false;
+                }
+                if (Vector3.Distance(transform.position, targetPosition3) < 0.1f)
+                {
+                    isStage1 = true;
+                    isStage2 = true;
+                    isStage3 = true;
+                }
+                
+                if (Vector3.Distance(transform.position, targetPosition1) > 2f
+                    && !isStage1)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position,
+                        new Vector3(targetPosition1.x, transform.position.y, targetPosition1.z),
+                        (bottleConfig.Speed + playtime) * Time.deltaTime);
+                }
+      
+                if (Vector3.Distance(transform.position, targetPosition2) > 2f
+                    && !isStage2)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position,
+                        new Vector3(targetPosition2.x, transform.position.y, targetPosition2.z),
+                        (bottleConfig.Speed + playtime) * Time.deltaTime);
+                }
+                
+                if (Vector3.Distance(transform.position, targetPosition3) > 0.1f
+                    && !isStage3)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position,
+                        new Vector3(targetPosition3.x, transform.position.y, targetPosition3.z),
+                        (bottleConfig.Speed + playtime) * Time.deltaTime);
+                }
+                
                 yield return null;
             }
 
@@ -48,6 +92,23 @@ namespace Script.Bottle
         public void Stop()
         {
             StopCoroutine(coroutine);
+        }
+
+        public void OnMove(Transform bottlePositionPosition)
+        {
+            coroutine = StartCoroutine(StartMove(bottlePositionPosition));
+        }
+
+        private IEnumerator StartMove(Transform bottlePositionPosition)
+        {
+            while (Vector3.Distance(transform.position, bottlePositionPosition.position) > 0.1f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position,
+                    new Vector3(bottlePositionPosition.position.x, transform.position.y, bottlePositionPosition.position.z),
+                    (bottleConfig.Speed + playtime) * Time.deltaTime);
+
+                yield return null;
+            }
         }
     }
 }
