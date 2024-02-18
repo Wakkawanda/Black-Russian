@@ -74,7 +74,7 @@ namespace Script.Spawn
             int.TryParse(PlayerPrefs.GetString("keyScore"), out int value);
             if (value < int.Parse(handMove.Score.text))
             {
-                PlayerPrefs.SetString("keyScore", $"{handMove.Score}");
+                PlayerPrefs.SetString("keyScore", $"{handMove.Score.text}");
             }
         }
 
