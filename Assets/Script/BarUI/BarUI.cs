@@ -49,7 +49,7 @@ namespace Script.BarUI
             {
                 slider.fillAmount -= 0.01f;
                 
-                if (slider.fillAmount > 0.75f)
+                if (slider.fillAmount > 0.70f)
                 {
                     float targetValue = lensDistortion.intensity.value - 3f;
                     
@@ -59,16 +59,22 @@ namespace Script.BarUI
                         yield return null;
                     }
                 }
-                else
+                
+                if (slider.fillAmount < 0.70f)
                 {
-                    while (lensDistortion.intensity.value <= 0)
+                    while (lensDistortion.intensity.value is < 0 and < 100)
                     {
                         lensDistortion.intensity.value += 1f;
                         yield return null;
                     }
+
+                    if (lensDistortion.intensity.value > 0)
+                    {
+                        lensDistortion.intensity.value = 0;
+                    }
                 }
 
-                if (slider.fillAmount < 0.25f)
+                if (slider.fillAmount < 0.30f)
                 {
                     float targetValue = vignette.intensity.value + 0.05f;
                     
@@ -78,7 +84,8 @@ namespace Script.BarUI
                         yield return null;
                     }
                 }
-                else
+                
+                if (slider.fillAmount > 0.30f)
                 {
                     vignette.intensity.value = 0f;
                 }
