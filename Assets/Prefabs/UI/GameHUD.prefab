@@ -237,8 +237,9 @@ MonoBehaviour:
   barCanvasGroup: {fileID: 2877988343081017934}
   end1: {fileID: 0}
   end2: {fileID: 0}
+  end3: {fileID: 0}
   audioSource: {fileID: 0}
-  breakGameOver: {fileID: 0}
+  gameOver: {fileID: 0}
   spawner: {fileID: 0}
 --- !u!1 &2709960608201799154
 GameObject:
