@@ -1869,6 +1869,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4740589489801373687, guid: e3725c211c20f864fb34c90a6f1ef079, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740589489801373687, guid: e3725c211c20f864fb34c90a6f1ef079, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6498454733428541983, guid: e3725c211c20f864fb34c90a6f1ef079, type: 3}
       propertyPath: m_Name
       value: GameOver
