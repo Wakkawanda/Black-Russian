@@ -109,13 +109,15 @@ namespace Script.BarUI
             {
                 if (slider.fillAmount > 0.75f)
                 {
-                    float targetValue = lensDistortion.intensity.value - 50f;
+                    float targetValue = lensDistortion.intensity.value - 35f;
                     
                     while (Math.Abs(lensDistortion.intensity.value - targetValue) > 0.01f)
                     {
                         lensDistortion.intensity.value -= 0.1f;
                         yield return null;
                     }
+                    
+                    yield return new WaitForSeconds(1);
                 }
                 
                 if (slider.fillAmount < 0.75f)
@@ -145,7 +147,7 @@ namespace Script.BarUI
                     yield return new WaitForSeconds(1);
                 }
 
-                if (vignette.intensity.value >= 1f && int.Parse(handMove.Score.text) < 1000)
+                if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) < 1000)
                 {
                     PlayerPrefs.SetInt(RewardKey1, 1);
                     end1.gameObject.SetActive(true);
@@ -164,7 +166,7 @@ namespace Script.BarUI
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -75f && int.Parse(handMove.Score.text) >= 1000)
+                if (lensDistortion.intensity.value <= -100f && int.Parse(handMove.Score.text) >= 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
