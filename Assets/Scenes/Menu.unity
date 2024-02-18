@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ponomarev Anatoly
+  m_text: "\u041F\u043E\u043D\u043E\u043C\u0430\u0440\u0451\u0432 \u0410\u043D\u0430\u0442\u043E\u043B\u0438\u0439"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -478,7 +478,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Don''t forget to leave a cool '
+  m_text: "\u041D\u0435 \u0437\u0430\u0431\u044B\u0442\u044C \u0432\u0441\u0442\u0430\u0432\u0438\u0442\u044C
+    \u043A\u0440\u0443\u0442\u043E\u0439"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -694,8 +695,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0430\u0437\u043E\u0448\u0451\u043B\u0441\u044F \u0441 \u0438\u0433\u0440\u043E\u0439
-    \u0438"
+  m_text: "\u0421\u043B\u0438\u0448\u043A\u043E\u043C \u0443\u0432\u043B\u0451\u043A\u0441\u044F
+    \u0438\u0433\u0440\u043E\u0439 \u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -944,7 +945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -415.29996, y: 119.5}
+  m_AnchoredPosition: {x: -415.29993, y: 119.5}
   m_SizeDelta: {x: -1321.97, y: -1017.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407249217
@@ -1399,7 +1400,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Konovalov Sergey :'
+  m_text: "\u041A\u043E\u043D\u043E\u0432\u0430\u043B\u043E\u0432 \u0421\u0435\u0440\u0433\u0435\u0439
+    : "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -2922,7 +2924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: comment here.
+  m_text: "\u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0441\u044E\u0434\u0430."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -3356,7 +3358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team lead \S
+  m_text: " \u0422\u0438\u043C \u041B\u0438\u0434"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -3790,7 +3792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u043D\u0430\u0431\u0443\u0445\u0430\u043B\u0441\u044F \u0432 \u0445\u043B\u0430\u043C"
+  m_text: "\u0441\u043F\u0438\u043B\u0441\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -4222,7 +4224,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Konovalov Sergey :'
+  m_text: "\u041A\u043E\u043D\u043E\u0432\u0430\u043B\u043E\u0432 \u0421\u0435\u0440\u0433\u0435\u0439
+    : "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -4748,7 +4751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: comment here.
+  m_text: "\u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0441\u044E\u0434\u0430."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -5056,7 +5059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1312704511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5313,7 +5316,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Went on maternity leave to play roblox
+  m_text: "\u0423\u0448\u0451\u043B \u0432 \u0434\u0435\u043A\u0440\u0435\u0442 \u0447\u0442\u043E\u0431\u044B
+    \u0438\u0433\u0440\u0430\u0442\u044C \u0432 \u0420\u043E\u0431\u043B\u043E\u043A\u0441"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -5604,7 +5608,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Went on maternity leave to play roblox
+  m_text: "\u0423\u0448\u0451\u043B \u0432 \u0434\u0435\u043A\u0440\u0435\u0442 \u0447\u0442\u043E\u0431\u044B
+    \u0438\u0433\u0440\u0430\u0442\u044C \u0432 \u0420\u043E\u0431\u043B\u043E\u043A\u0441"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -6081,7 +6086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -139.99991, y: 83}
+  m_AnchoredPosition: {x: -139.99988, y: 83}
   m_SizeDelta: {x: 763.07, y: 405.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518205476
@@ -6261,7 +6266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ponomarev Anatoly
+  m_text: "\u041F\u043E\u043D\u043E\u043C\u0430\u0440\u0451\u0432 \u0410\u043D\u0430\u0442\u043E\u043B\u0438\u0439"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -6477,7 +6482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u043D\u0430\u0431\u0443\u0445\u0430\u043B\u0441\u044F \u0432 \u0445\u043B\u0430\u043C"
+  m_text: "\u0441\u043F\u0438\u043B\u0441\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -6693,7 +6698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team lead \S
+  m_text: " \u0422\u0438\u043C \u041B\u0438\u0434"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -7047,7 +7052,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Don''t forget to leave a cool '
+  m_text: "\u041D\u0435 \u0437\u0430\u0431\u044B\u0442\u044C \u0432\u0441\u0442\u0430\u0432\u0438\u0442\u044C
+    \u043A\u0440\u0443\u0442\u043E\u0439"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -7669,8 +7675,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0430\u0437\u043E\u0448\u0451\u043B\u0441\u044F \u0441 \u0438\u0433\u0440\u043E\u0439
-    \u0438"
+  m_text: "\u0421\u043B\u0438\u0448\u043A\u043E\u043C \u0443\u0432\u043B\u0451\u043A\u0441\u044F
+    \u0438\u0433\u0440\u043E\u0439 \u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
   m_sharedMaterial: {fileID: -1709187633852743555, guid: 87af9db1a5d01e6489129bdceb96d67a, type: 2}
@@ -7781,7 +7787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -412.9999, y: 123}
+  m_AnchoredPosition: {x: -412.99988, y: 123}
   m_SizeDelta: {x: -1323.5, y: -1017.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065696255
