@@ -56,6 +56,24 @@ namespace Script.BarUI
         private void Update()
         {
             currentGameTime += Time.deltaTime;
+
+            if (handMove.isIFirstDrink)
+            {
+                particleSystemUp.gameObject.SetActive(slider.fillAmount > 0.75f);
+                particleSystemDown.gameObject.SetActive(slider.fillAmount < 0.25f); 
+            }
+
+            if (slider.fillAmount > 0.25f && handMove.isIFirstDrink)
+            {
+                vignette.intensity.value = 0f;
+            }
+            
+            if (currentGameTime > currentStepSpeedUp && handMove.isIFirstDrink)
+            {
+                currentStepSpeedUp += stepSpeedUp;
+                if (delaySecondsSpawn > 0.6)
+                    delaySecondsSpawn -= 0.3f;
+            }
         }
 
         private IEnumerator RunningSobriety()
@@ -100,36 +118,6 @@ namespace Script.BarUI
                         vignette.intensity.value += 0.01f;
                         yield return null;
                     }
-                }
-                
-                if (slider.fillAmount > 0.25f)
-                {
-                    vignette.intensity.value = 0f;
-                }
-
-                if (slider.fillAmount > 0.7f)
-                {
-                    particleSystemUp.gameObject.SetActive(true);
-                }
-                else
-                {
-                    particleSystemUp.gameObject.SetActive(false);
-                }
-
-                if (slider.fillAmount < 0.25f)
-                {
-                    particleSystemDown.gameObject.SetActive(true);
-                }
-                else
-                {
-                    particleSystemDown.gameObject.SetActive(false);
-                }
-
-                if (currentGameTime > currentStepSpeedUp)
-                {
-                    currentStepSpeedUp += stepSpeedUp;
-                    if (delaySecondsSpawn > 0.3)
-                        delaySecondsSpawn -= 0.3f;
                 }
 
                 if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) < 1000)
