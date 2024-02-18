@@ -3417,6 +3417,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1589260958}
     - target: {fileID: 2744981776636619745, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 1701974280}
+    - target: {fileID: 2744981776636619745, guid: fe2015baf26d9b948b66db6e5fd33761, type: 3}
       propertyPath: handMove
       value: 
       objectReference: {fileID: 628027943}
