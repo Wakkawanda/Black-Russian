@@ -10,6 +10,8 @@ namespace Script.BarUI
     {
         [SerializeField] private Image slider;
         [SerializeField] private HandMove handMove;
+        [SerializeField] private ParticleSystem particleSystemUp;
+        [SerializeField] private ParticleSystem particleSystemDown;
         
         private float delaySecondsSpawn = 2;
         private float currentGameTime = 0;
@@ -46,6 +48,24 @@ namespace Script.BarUI
                     currentStepSpeedUp += stepSpeedUp;
                     if (delaySecondsSpawn > 0.3)
                         delaySecondsSpawn -= 0.3f;
+                }
+
+                if (slider.fillAmount > 0.9f)
+                {
+                    particleSystemUp.gameObject.SetActive(true);
+                }
+                else
+                {
+                    particleSystemUp.gameObject.SetActive(false);
+                }
+
+                if (slider.fillAmount < 0.1f)
+                {
+                    particleSystemDown.gameObject.SetActive(true);
+                }
+                else
+                {
+                    particleSystemDown.gameObject.SetActive(false);
                 }
                 
                 yield return new WaitForSeconds(delaySecondsSpawn);
