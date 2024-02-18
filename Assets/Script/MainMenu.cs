@@ -26,8 +26,8 @@ public class MainMenu : MonoBehaviour
 
         if (PlayerPrefs.HasKey("keyScore"))
         {
-            text1.text = PlayerPrefs.GetString("keyScore");
-            text2.text = PlayerPrefs.GetString("keyScore");
+            text1.text = PlayerPrefs.GetString("keyScore", "0");
+            text2.text = PlayerPrefs.GetString("keyScore", "0");
         }
         
     }
