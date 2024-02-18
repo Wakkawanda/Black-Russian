@@ -4,7 +4,6 @@ using Script.Bottle;
 using Script.Spawn;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 namespace Script.Hand
 {
@@ -20,13 +19,13 @@ namespace Script.Hand
         [SerializeField] private TextMeshProUGUI score;
         [SerializeField] private BarUI.BarUI barUI;
         [SerializeField] private AudioSource audioSource;
-        
+        [SerializeField] private GameObject end3;
+
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
 
         public Transform BottlePosition => bottlePosition;
-
-        public event Action GameOver;
+        public TextMeshProUGUI Score => score;
 
         private void Start()
         {
@@ -84,8 +83,8 @@ namespace Script.Hand
             }
             else if (bottle.BottleConfig.TypeDrink == TypeDrink.DeadDrink)
             {
-                GameOver?.Invoke();
-                Debug.Log("Смерть");
+                end3.gameObject.SetActive(true);
+                StartCoroutine(barUI.GameOver());
             }
 
             bottle.gameObject.SetActive(false);
@@ -107,6 +106,5 @@ namespace Script.Hand
         {
             speed = targetSpeed;
         }
-        
     }
 }
