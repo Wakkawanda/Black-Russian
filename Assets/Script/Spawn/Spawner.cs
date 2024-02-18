@@ -99,7 +99,7 @@ namespace Script.Spawn
                 yield return null;
             }
 
-            while (mainSound.volume > 0.3f)
+            while (mainSound.volume > 0.1f)
             {
                 mainSound.volume -= 0.06f;
                 yield return new WaitForSeconds(1f);
