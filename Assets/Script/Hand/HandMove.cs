@@ -24,7 +24,6 @@ namespace Script.Hand
 
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
-        
 
         public Transform BottlePosition => bottlePosition;
         public TextMeshProUGUI Score => score;
