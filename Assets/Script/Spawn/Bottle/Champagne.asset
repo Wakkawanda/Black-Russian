@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Champagne
   m_EditorClassIdentifier: 
   Power: 20
-  Score: 16
+  Score: 38
   TypeDrink: 1
   Prefab: {fileID: 4947161508140812964, guid: 09039d35f5d6c77408ef16a98f70d18b, type: 3}
   Speed: 6

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e13beb1d8c4ef9b34af762c4efb007, type: 3}
-  m_Name: Beer
+  m_Name: Cognac
   m_EditorClassIdentifier: 
-  Power: 30
-  Score: 50
+  Power: 16
+  Score: 21
   TypeDrink: 1
-  Prefab: {fileID: 6198815713892377132, guid: fde15da5d681870438e2f73608bc798e, type: 3}
+  Prefab: {fileID: 4058085760231638778, guid: 680e110f3e79bc1438df26e3053c7be5, type: 3}
   Speed: 6
-  AudioClip: {fileID: 8300000, guid: a335fa3ad9dd1fe45b4dd3c8c65b0e63, type: 3}
+  AudioClip: {fileID: 8300000, guid: 4845a893e37f31a4d844535a8e8a3bf0, type: 3}
   AudioCrash: {fileID: 8300000, guid: 5661cca9cf9fdc84096a605f6d95c53f, type: 3}
