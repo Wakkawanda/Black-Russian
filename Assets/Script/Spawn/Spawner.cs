@@ -22,7 +22,8 @@ namespace Script.Spawn
         [SerializeField] private TargetSpawnPoint[] targetSpawnPoints3;
             
         private List<BottleMove> bottles = new List<BottleMove>();
-        
+
+        private Coroutine coroutine;
         private float delaySecondsSpawn = 2;
         private float currentGameTime = 0;
         private float stepSpeedUp = 25;
@@ -51,7 +52,7 @@ namespace Script.Spawn
 
         private void Start()
         {
-            StartCoroutine(StartSpawn());
+            coroutine = StartCoroutine(StartSpawn());
         }
 
         private void Update()
@@ -64,6 +65,11 @@ namespace Script.Spawn
                 if (delaySecondsSpawn > 0.6f)
                     delaySecondsSpawn -= 0.5f;
             }
+        }
+
+        public void StopSpawn()
+        {
+            StopCoroutine(coroutine);
         }
 
         private IEnumerator StartSpawn()
