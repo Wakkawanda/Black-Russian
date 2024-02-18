@@ -71,8 +71,8 @@ namespace Script.Spawn
         {
             StopCoroutine(coroutine);
             handMove.GameOverScore.text = $"{handMove.Score.text}";
-
-            if (int.Parse(PlayerPrefs.GetString("keyScore")) < int.Parse(handMove.Score.text))
+            int.TryParse(PlayerPrefs.GetString("keyScore"), out int value);
+            if (value < int.Parse(handMove.Score.text))
             {
                 PlayerPrefs.SetString("keyScore", $"{handMove.Score}");
             }

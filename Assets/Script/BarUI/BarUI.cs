@@ -25,7 +25,7 @@ namespace Script.BarUI
         private Vignette vignette;
         private LensDistortion lensDistortion;
         private Coroutine coroutine;
-        private float delaySecondsSpawn = 2;
+        private float delaySecondsSpawn = 1.5f;
         private float currentGameTime = 0;
         private float stepSpeedUp = 25;
         private float currentStepSpeedUp;
@@ -34,6 +34,9 @@ namespace Script.BarUI
 
         private void Awake()
         {
+            mainCanvasGroup.alpha = 0;
+            mainCanvasGroup.blocksRaycasts = false;
+            mainCanvasGroup.interactable = false;
             currentGameTime = 0;
             lensDistortion = postProcessVolume.profile.GetSetting<LensDistortion>();
             vignette = postProcessVolume.profile.GetSetting<Vignette>();
@@ -119,8 +122,8 @@ namespace Script.BarUI
                 if (currentGameTime > currentStepSpeedUp)
                 {
                     currentStepSpeedUp += stepSpeedUp;
-                    if (delaySecondsSpawn > 0.3)
-                        delaySecondsSpawn -= 0.3f;
+                    if (delaySecondsSpawn >= 0.3)
+                        delaySecondsSpawn -= 0.29f;
                 }
 
                 if (vignette.intensity.value >= 0.8f)
@@ -160,6 +163,9 @@ namespace Script.BarUI
                 mainCanvasGroup.alpha += 0.01f;
                 yield return null;
             }
+            
+            mainCanvasGroup.blocksRaycasts = true;
+            mainCanvasGroup.interactable = true;
         }
 
         public void ChangeSlider(int value)
