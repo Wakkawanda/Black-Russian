@@ -19,6 +19,7 @@ namespace Script.BarUI
         [SerializeField] private CanvasGroup barCanvasGroup;
         [SerializeField] private GameObject end1;
         [SerializeField] private GameObject end2;
+        [SerializeField] private GameObject end3;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioSource breakGameOver;
         [SerializeField] private Spawner spawner;
@@ -127,13 +128,24 @@ namespace Script.BarUI
                         delaySecondsSpawn -= 0.29f;
                 }
 
-                if (vignette.intensity.value >= 0.8f)
+                if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) < 1000)
                 {
                     end1.gameObject.SetActive(true);
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -90f)
+                if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) < 1000)
+                {
+                    StartCoroutine(StartGameOver());
+                }
+                
+                if (vignette.intensity.value >= 0.8f && int.Parse(handMove.Score.text) >= 1000)
+                {
+                    end3.gameObject.SetActive(true);
+                    StartCoroutine(GameOver());
+                }
+                
+                if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) >= 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
@@ -146,11 +158,17 @@ namespace Script.BarUI
         {
             yield return new WaitForSeconds(5);
 
-            if (lensDistortion.intensity.value < -90f)
+            if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) < 1000)
             {
                 end2.gameObject.SetActive(true);
-                StartCoroutine(GameOver());
             }
+
+            if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) >= 1000)
+            {
+                end3.gameObject.SetActive(true);
+            }
+            
+            StartCoroutine(GameOver());
         }
 
         public IEnumerator GameOver()
