@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button play, autors, exit, back;
     [SerializeField] private GameObject n1, n2, autor, board;
     [SerializeField] private TMP_Text text1, text2;
-    [SerializeField] private Image reward1, reward2, reward3, reward4;
+    [SerializeField] private Image reward1, reward2, reward3, reward4, reward5;
 
     private const string RewardKey1 = "RewardKey1";
     private const string RewardKey2 = "RewardKey2";
@@ -63,7 +64,17 @@ public class MainMenu : MonoBehaviour
                 reward4.gameObject.SetActive(true);
             }
         }
-        
+    }
+
+    private void Start()
+    {
+        if (reward1.gameObject.activeSelf
+            && reward2.gameObject.activeSelf
+            && reward3.gameObject.activeSelf
+            && reward4.gameObject.activeSelf)
+        {
+            reward5.gameObject.SetActive(true);
+        }
     }
 
     private void BackClick()

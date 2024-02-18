@@ -26,7 +26,7 @@ namespace Script.Spawn
         private Coroutine coroutine;
         private float delaySecondsSpawn = 2;
         private float currentGameTime = 0;
-        private float stepSpeedUp = 20;
+        private float stepSpeedUp = 15;
         private float currentStepSpeedUp;
 
         private void Awake()
