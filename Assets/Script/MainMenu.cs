@@ -71,7 +71,6 @@ public class MainMenu : MonoBehaviour
         {
             reward5.gameObject.SetActive(true);
         }
-        
     }
 
     private void BackClick()

@@ -3726,12 +3726,12 @@ GameObject:
   - component: {fileID: 790371389}
   - component: {fileID: 790371388}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Thanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &790371387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6984,6 +6984,7 @@ MonoBehaviour:
   reward2: {fileID: 1777997286}
   reward3: {fileID: 1503401155}
   reward4: {fileID: 1008577828}
+  reward5: {fileID: 790371388}
 --- !u!82 &1489077381
 AudioSource:
   m_ObjectHideFlags: 0
