@@ -76,7 +76,7 @@ namespace Script.Spawn
             {
                 if (TryGetBottle(out BottleMove bottleMove, 0))
                 {
-                    bottleMove.playtime = -5f;
+                    bottleMove.playtime = -3f;
                     bottleMove.transform.position = spawnPoints[2].transform.position;
                     bottleMove.gameObject.SetActive(true);
                     bottles[0].OnMove(handMove.BottlePosition);
@@ -89,7 +89,7 @@ namespace Script.Spawn
 
             while (mainSound.volume > 0.3f)
             {
-                mainSound.volume -= 0.0211f;
+                mainSound.volume -= 0.06f;
                 yield return new WaitForSeconds(1f);
             }
 
