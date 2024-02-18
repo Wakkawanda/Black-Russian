@@ -31,6 +31,7 @@ namespace Script.BarUI
         private Vignette vignette;
         private LensDistortion lensDistortion;
         private Coroutine coroutine;
+        private Coroutine coroutineAddScore;
         private float delaySecondsSpawn = 1.5f;
         private float currentGameTime = 0;
         private float stepSpeedUp = 25;
@@ -51,6 +52,18 @@ namespace Script.BarUI
         private void Start()
         {
             coroutine = StartCoroutine(RunningSobriety());
+            coroutineAddScore = StartCoroutine(AddScore());
+        }
+
+        private IEnumerator AddScore()
+        {
+            while (true)
+            {
+                if (slider.fillAmount > 0.25 && slider.fillAmount < 75)
+                    handMove.Score.text = $"{int.Parse(handMove.Score.text) + 1}";
+
+                yield return new WaitForSeconds(0.1f);
+            }
         }
 
         private void Update()
@@ -173,6 +186,7 @@ namespace Script.BarUI
             barCanvasGroup.alpha = 0;
             spawner.StopSpawn();
             StopCoroutine(coroutine);
+            StopCoroutine(coroutineAddScore);
             
             while (mainCanvasGroup.alpha < 1)
             {
