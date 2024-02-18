@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -63,7 +64,10 @@ public class MainMenu : MonoBehaviour
                 reward4.gameObject.SetActive(true);
             }
         }
+    }
 
+    private void Start()
+    {
         if (reward1.gameObject.activeSelf
             && reward2.gameObject.activeSelf
             && reward3.gameObject.activeSelf
