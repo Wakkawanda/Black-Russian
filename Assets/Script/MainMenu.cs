@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.Net.Mime;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -13,6 +15,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button play, autors, exit, back;
     [SerializeField] private GameObject n1, n2, autor, board;
+    [SerializeField] private TMP_Text text1, text2;
     
     public void OnEnable()
     {   
@@ -20,6 +23,13 @@ public class MainMenu : MonoBehaviour
         exit.onClick.AddListener(Application.Quit);
         autors.onClick.AddListener(AutorsClick);
         back.onClick.AddListener(BackClick);
+
+        if (PlayerPrefs.HasKey("keyScore"))
+        {
+            text1.text = PlayerPrefs.GetString("keyScore");
+            text2.text = PlayerPrefs.GetString("keyScore");
+        }
+        
     }
 
     private void BackClick()
