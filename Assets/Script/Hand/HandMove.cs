@@ -4,6 +4,7 @@ using Script.Bottle;
 using Script.Spawn;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Script.Hand
 {
@@ -19,7 +20,7 @@ namespace Script.Hand
         [SerializeField] private TextMeshProUGUI score;
         [SerializeField] private BarUI.BarUI barUI;
         [SerializeField] private AudioSource audioSource;
-
+        
         private bool isIDrink;
         public bool isIFirstDrink { get; private set; }
 
@@ -106,5 +107,6 @@ namespace Script.Hand
         {
             speed = targetSpeed;
         }
+        
     }
 }
