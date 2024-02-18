@@ -21,7 +21,7 @@ namespace Script.BarUI
         [SerializeField] private GameObject end2;
         [SerializeField] private GameObject end3;
         [SerializeField] private AudioSource audioSource;
-        [SerializeField] private AudioSource breakGameOver;
+        [SerializeField] private AudioSource gameOver;
         [SerializeField] private Spawner spawner;
 
         private Vignette vignette;
@@ -64,7 +64,7 @@ namespace Script.BarUI
                 
                 if (slider.fillAmount > 0.70f)
                 {
-                    float targetValue = lensDistortion.intensity.value - 3f;
+                    float targetValue = lensDistortion.intensity.value - 50f;
                     
                     while (Math.Abs(lensDistortion.intensity.value - targetValue) > 0.01f)
                     {
@@ -103,7 +103,7 @@ namespace Script.BarUI
                     vignette.intensity.value = 0f;
                 }
 
-                if (slider.fillAmount > 0.9f)
+                if (slider.fillAmount > 0.7f)
                 {
                     particleSystemUp.gameObject.SetActive(true);
                 }
@@ -112,7 +112,7 @@ namespace Script.BarUI
                     particleSystemUp.gameObject.SetActive(false);
                 }
 
-                if (slider.fillAmount < 0.1f)
+                if (slider.fillAmount < 0.3f)
                 {
                     particleSystemDown.gameObject.SetActive(true);
                 }
@@ -134,7 +134,7 @@ namespace Script.BarUI
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) < 1000)
+                if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) < 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
@@ -145,7 +145,7 @@ namespace Script.BarUI
                     StartCoroutine(GameOver());
                 }
                 
-                if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) >= 1000)
+                if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) >= 1000)
                 {
                     StartCoroutine(StartGameOver());
                 }
@@ -158,12 +158,12 @@ namespace Script.BarUI
         {
             yield return new WaitForSeconds(5);
 
-            if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) < 1000)
+            if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) < 1000)
             {
                 end2.gameObject.SetActive(true);
             }
 
-            if (lensDistortion.intensity.value < -90f && int.Parse(handMove.Score.text) >= 1000)
+            if (lensDistortion.intensity.value < -70f && int.Parse(handMove.Score.text) >= 1000)
             {
                 end3.gameObject.SetActive(true);
             }
@@ -173,6 +173,7 @@ namespace Script.BarUI
 
         public IEnumerator GameOver()
         {
+            gameOver.Play();
             barCanvasGroup.alpha = 0;
             spawner.StopSpawn();
             StopCoroutine(coroutine);
